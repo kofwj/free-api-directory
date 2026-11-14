@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../data/apis.json';
+---
+<Layout title="免费 API 目录 — 额度、绑卡、国内直连一次讲清" description="免费大模型、天气、股票、地图、IP 快递 API 对比：免费额度、要不要 Key、绑卡、国内直连、能不能商用。">
+<h1>免费 API 目录</h1>
+<p>不做 2,388 条大而全的列表，只做 5 张中文对比表：每一行都写清免费额度、要不要 Key、绑卡、国内直连、能不能商用。数据更新：{data.updated}。</p>
+<div class="card">
+{data.categories.map(c => (
+  <a href={`/${c.slug}/`}><strong>{c.title}</strong><br/><small>关键词：{c.keyword}</small></a>
+))}
+</div>
+<h2>为什么只做 5 张表</h2>
+<ul>
+<li>原版 public-apis 只有 API / 描述 / Auth / HTTPS / CORS 五列，没有额度、没有国内可达、没有商用说明。</li>
+<li>freepublicapis 103 条高需求里只覆盖 39 条，54 条主流没收；三家目录中文 API 几乎为零。</li>
+<li>先做这 5 个长尾词，90 天看自然搜索点击 &lt;1,000/月就停。</li>
+</ul>
+</Layout>
