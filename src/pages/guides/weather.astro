@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import data from '../../data/apis.json';
+const w = data.categories.find(c => c.slug === 'weather')!;
+const sorted = [...w.items].sort((a,b) => a.name.localeCompare(b.name, 'zh'));
+---
+<Layout title="免费天气 API 对比：Open-Meteo、OpenWeatherMap、WeatherAPI 额度谁最大" description="免费天气 API 横评：Open-Meteo 免 Key 10,000 次/天、OpenWeatherMap 经典档 1,000,000 次/月、WeatherAPI.com 100,000 次/月。额度、Key、国内直连、商用一次讲清。">
+<p class="back"><a href="/weather/">← 回免费天气 API 表</a></p>
+<h1 style="font-size:32px;margin:8px 0">免费天气 API 对比：额度谁最大</h1>
+<p class="section-note">核实：2026-11-14 · 只比免费档，不比付费档</p>
+<div class="table-wrap"><table>
+<thead><tr><th>API</th><th>免费额度</th><th>Key</th><th>国内直连</th><th>商用</th></tr></thead>
+<tbody>
+{sorted.map(i => (<tr><td><a href={`/api/${i.slug}/`}><strong>{i.name}</strong></a></td><td>{i.quota}</td><td>{i.key}</td><td>{i.china_direct}</td><td>{i.commercial}</td></tr>))}
+</tbody>
+</table></div>
+<h2>怎么选</h2>
+<ul class="tight">
+<li>要免 Key、马上能调：Open-Meteo，10,000 次/天，600 次/分钟，但仅非商业。</li>
+<li>要额度最大：OpenWeatherMap 经典免费档 1,000,000 次/月，60 次/分钟；One Call 3.0 免费 1,000 次/天要绑卡。</li>
+<li>要国内直接用：和风天气 QWeather 开发版免费，国内服务。</li>
+<li>要商用：WeatherAPI.com 100,000 次/月，免费档允许商用；Visual Crossing 1,000 记录/天，需署名。</li>
+</ul>
+</Layout>
