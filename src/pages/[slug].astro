@@ -24,7 +24,7 @@ const badge = (v: string) => {
 <tbody>
 {cat.items.map(i => (
 <tr>
-<td><a href={i.docs} rel="nofollow noopener" target="_blank"><strong>{i.name}</strong></a></td>
+<td><a href={`/api/${i.slug}/`}><strong>{i.name}</strong></a></td>
 <td>{i.quota}</td>
 <td><span class={`badge ${badge(i.key)[0]}`}>{badge(i.key)[1]}</span></td>
 <td><span class={`badge ${badge(i.card)[0]}`}>{badge(i.card)[1]}</span></td>
