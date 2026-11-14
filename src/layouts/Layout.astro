@@ -12,8 +12,8 @@ const { title, description } = Astro.props;
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<header><a href="/">免费 API 目录</a> <span>· 额度 / 绑卡 / 国内直连 / 商用，一张表讲清</span></header>
-<main><slot /></main>
-<footer><p>数据核实日期见各页。额度以官方文档为准，政策随时会变。本站不做中转、不卖 Key。</p></footer>
+<header class="topbar"><div class="topbar-inner"><a class="logo" href="/">免费 API <b>目录</b></a><span>额度 / 绑卡 / 国内直连 / 商用</span></div></header>
+<div class="wrap"><slot /></div>
+<footer class="wrap"><p>数据核实日期见各页。额度以官方文档为准，政策随时会变。本站不做中转、不卖 Key。</p></footer>
 </body>
 </html>
