@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://freeapi.anemy.org/sitemap-index.xml
