@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import data from '../../data/apis.json';
+export function getStaticPaths() {
+  return data.categories.flatMap(c => c.items.map(i => ({ params: { api: i.slug }, props: { cat: c, item: i } })));
+}
+const { cat, item } = Astro.props;
+---
+<Layout title={`${item.name} 免费额度 / Key / 绑卡 / 国内直连 — 免费 API 目录`} description={`${item.name}：免费额度 ${item.quota}。要不要 Key、绑卡、国内直连、能不能商用。`}>
+<p class="back"><a href={`/${cat.slug}/`}>← 回{cat.title}</a> · <a href="/">首页</a></p>
+<h1 style="font-size:32px;margin:8px 0">{item.name}</h1>
+<p class="section-note">分类：{cat.title} · 核实：{item.verified} · 来源：{item.source}</p>
+<div class="table-wrap"><table style="min-width:0">
+<tbody>
+<tr><th style="width:140px">免费额度</th><td>{item.quota}</td></tr>
+<tr><th>Key</th><td>{item.key}</td></tr>
+<tr><th>绑卡</th><td>{item.card}</td></tr>
+<tr><th>国内直连</th><td>{item.china_direct}</td></tr>
+<tr><th>商用</th><td>{item.commercial}</td></tr>
+<tr><th>官方文档</th><td><a href={item.docs} rel="nofollow noopener" target="_blank">{item.docs} ↗</a></td></tr>
+</tbody>
+</table></div>
+<p class="section-note">额度以官方文档为准，政策随时会变。</p>
+</Layout>
