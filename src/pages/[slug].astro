@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../data/apis.json';
+export function getStaticPaths() {
+  return data.categories.map(c => ({ params: { slug: c.slug }, props: { cat: c } }));
+}
+const { cat } = Astro.props;
+---
+<Layout title={`${cat.title} — 免费额度 / 绑卡 / 国内直连对比`} description={`${cat.title}：${cat.keyword}。免费额度、要不要 Key、绑卡、国内直连、能不能商用，一张表讲清。`}>
+<h1>{cat.title}</h1>
+<p>关键词：{cat.keyword} · 核实日期：{data.updated}</p>
+<table>
+<thead><tr><th>API</th><th>免费额度</th><th>Key</th><th>绑卡</th><th>国内直连</th><th>商用</th><th>来源</th></tr></thead>
+<tbody>
+{cat.items.map(i => (
+<tr>
+<td><a href={i.docs} rel="nofollow noopener" target="_blank">{i.name}</a></td>
+<td>{i.quota}</td><td>{i.key}</td><td>{i.card}</td><td>{i.china_direct}</td><td>{i.commercial}</td>
+<td>{i.source}（{i.verified}）</td>
+</tr>
+))}
+</tbody>
+</table>
+<p><a href="/">← 回首页</a></p>
+</Layout>
