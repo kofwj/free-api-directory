@@ -6,28 +6,19 @@ const total = data.categories.reduce((n, c) => n + c.items.length, 0);
 <Layout title="免费 API 目录 — 额度、绑卡、国内直连一次讲清" description="免费大模型、天气、股票、地图、IP 快递 API 对比：免费额度、要不要 Key、绑卡、国内直连、能不能商用。">
 <section class="hero">
 <h1>免费 API，<em>先看额度再动手</em></h1>
-<p>不做 2,388 条大而全的列表，只做 5 张中文对比表。每一行都写清免费额度、要不要 Key、绑卡、国内直连、能不能商用。</p>
+<p>5 张表，{total} 个 API。免费额度、要不要 Key、绑卡、国内直连、能不能商用。</p>
 </section>
-<div class="stats">
-<div class="stat"><strong>5</strong><span>对比表</span></div>
-<div class="stat"><strong>{total}</strong><span>已核实 API</span></div>
-<div class="stat"><strong>2026-11-14</strong><span>最近核实</span></div>
-</div>
 <div class="grid">
 {data.categories.map(c => (
   <a class="card" href={`/${c.slug}/`}>
     <span class="tag">{c.items.length} 个 API</span>
     <h3>{c.title}</h3>
-    <p>关键词：{c.keyword}</p>
-    <div class="go">查看对比表 →</div>
+    <ul style="margin:10px 0 0;padding-left:18px;color:#475569;font-size:14px;line-height:1.9">
+    {c.items.slice(0,3).map(i => (<li>{i.name} — {i.quota}</li>))}
+    </ul>
+    <div class="go">看完整对比 →</div>
   </a>
 ))}
 </div>
-<h2>为什么只做 5 张表</h2>
-<ul class="tight">
-<li>原版 public-apis 只有 API / 描述 / Auth / HTTPS / CORS 五列，没有额度、没有国内可达、没有商用说明。</li>
-<li>freepublicapis 103 条高需求里只覆盖 39 条，54 条主流没收；三家目录中文 API 几乎为零。</li>
-<li>先做这 5 个长尾词，90 天看自然搜索点击 &lt;1,000/月就停。</li>
-</ul>
-<p class="section-note">每张表都标注来源和核实日期，额度变了会更新，不会让旧数字一直挂着。</p>
+<p class="section-note">核实：{data.updated} · 额度以官方文档为准</p>
 </Layout>
