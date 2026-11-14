@@ -5,21 +5,35 @@ export function getStaticPaths() {
   return data.categories.map(c => ({ params: { slug: c.slug }, props: { cat: c } }));
 }
 const { cat } = Astro.props;
+const badge = (v: string) => {
+  if (v.includes('免 Key')) return ['green', v];
+  if (v.includes('要 Key') || v.includes('要 Token')) return ['amber', v];
+  if (v.startsWith('是')) return ['green', v];
+  if (v.startsWith('否')) return ['amber', v];
+  if (v.includes('不用绑卡')) return ['green', v];
+  if (v.includes('要注册')) return ['grey', v];
+  return ['grey', v];
+};
 ---
 <Layout title={`${cat.title} — 免费额度 / 绑卡 / 国内直连对比`} description={`${cat.title}：${cat.keyword}。免费额度、要不要 Key、绑卡、国内直连、能不能商用，一张表讲清。`}>
-<h1>{cat.title}</h1>
-<p>关键词：{cat.keyword} · 核实日期：{data.updated}</p>
-<table>
+<p class="back"><a href="/">← 回首页</a></p>
+<h1 style="font-size:32px;margin:8px 0">{cat.title}</h1>
+<p class="section-note">关键词：{cat.keyword} · 核实日期：{data.updated} · 共 {cat.items.length} 个 API</p>
+<div class="table-wrap"><table>
 <thead><tr><th>API</th><th>免费额度</th><th>Key</th><th>绑卡</th><th>国内直连</th><th>商用</th><th>来源</th></tr></thead>
 <tbody>
 {cat.items.map(i => (
 <tr>
-<td><a href={i.docs} rel="nofollow noopener" target="_blank">{i.name}</a></td>
-<td>{i.quota}</td><td>{i.key}</td><td>{i.card}</td><td>{i.china_direct}</td><td>{i.commercial}</td>
-<td>{i.source}（{i.verified}）</td>
+<td><a href={i.docs} rel="nofollow noopener" target="_blank"><strong>{i.name}</strong></a></td>
+<td>{i.quota}</td>
+<td><span class={`badge ${badge(i.key)[0]}`}>{badge(i.key)[1]}</span></td>
+<td><span class={`badge ${badge(i.card)[0]}`}>{badge(i.card)[1]}</span></td>
+<td><span class={`badge ${badge(i.china_direct)[0]}`}>{badge(i.china_direct)[1]}</span></td>
+<td>{i.commercial}</td>
+<td style="color:#64748b;font-size:13px">{i.source}（{i.verified}）</td>
 </tr>
 ))}
 </tbody>
-</table>
-<p><a href="/">← 回首页</a></p>
+</table></div>
+<p class="section-note">额度以官方文档为准，政策随时会变。国内直连列是 200.5 实测方法：DoH 取真实 IP 再 curl，绕开 mihomo fake-ip；未实测的标“未验证”。</p>
 </Layout>
