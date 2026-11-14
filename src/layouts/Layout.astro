@@ -1,0 +1,19 @@
+---
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<header><a href="/">免费 API 目录</a> <span>· 额度 / 绑卡 / 国内直连 / 商用，一张表讲清</span></header>
+<main><slot /></main>
+<footer><p>数据核实日期见各页。额度以官方文档为准，政策随时会变。本站不做中转、不卖 Key。</p></footer>
+</body>
+</html>
