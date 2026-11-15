@@ -54,5 +54,10 @@ tbody tr:hover{background:#f8fafc}
 .api-card h3{font-size:16px}
 .api-card p{font-size:13px;min-height:40px}
 .badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.verdict{background:#0f172a;color:#fff;border-radius:14px;padding:20px 22px;margin:20px 0;font-size:16px;line-height:1.7}
+.verdict strong{color:#93c5fd}
+.pick-grid{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:900px){.pick-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.pick-grid{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--muted);font-size:13px}
 .back{font-size:14px}
