@@ -8,6 +8,13 @@ const overseas = l.items.filter(i => i.china_direct !== '是');
 <Layout title="免费大模型 API 国内直连横评：DeepSeek、智谱、豆包、通义谁能直接用" description="免费大模型 API 国内直连横评：DeepSeek、硅基流动、智谱 GLM、豆包、通义千问、讯飞星火国内能用；Gemini、Groq、OpenAI 需境外网络。额度、Key、绑卡一次讲清。">
 <p class="back"><a href="/llm/">← 回免费大模型 API 表</a></p>
 <h1 style="font-size:32px;margin:8px 0">免费大模型 API 国内直连横评</h1>
+<section class="verdict"><strong>结论：</strong>免费档是智谱 GLM-4.7-Flash（免费）；最新版 GLM-5.3-Flash 按量计费（输入 ¥0.8/百万 Token，输出 ¥2.8）；讯飞星火 Spark Lite 永久免费；不想绑卡，用 DeepSeek、硅基流动。</section>
+<h2>按场景选</h2>
+<div class="grid pick-grid">
+<div class="card"><span class="tag">国内直连 + 免费</span><h3>智谱 GLM-4.7-Flash / 讯飞星火</h3><p>GLM-4.7-Flash 免费（上下文 200K）；讯飞星火 Spark Lite 永久免费。最新 GLM-5.3-Flash 按量计费，不免费。</p></div>
+<div class="card"><span class="tag">新用户额度最大</span><h3>智谱 / 通义 / 豆包</h3><p>智谱新用户送 2,000 万 Token 体验包（适用模型未说明）；通义每模型 100 万 Token（90 天）；豆包实名后每模型每天 200 万 Token。</p></div>
+<div class="card"><span class="tag">不绑卡</span><h3>DeepSeek / 硅基流动</h3><p>DeepSeek、硅基流动、Gemini、Groq 都不用绑卡。OpenAI、Hugging Face、Replicate 要绑卡，且 OpenAI 无免费额度。</p></div>
+</div>
 <h2>国内能用</h2>
 <div class="table-wrap"><table>
 <thead><tr><th>API</th><th>免费额度</th><th>Key</th><th>绑卡</th></tr></thead>
@@ -22,12 +29,6 @@ const overseas = l.items.filter(i => i.china_direct !== '是');
 {overseas.map(i => (<tr><td><a href={`/api/${i.slug}/`}><strong>{i.name}</strong></a></td><td>{i.quota}</td><td>{i.key}</td><td>{i.china_direct}</td></tr>))}
 </tbody>
 </table></div>
-<h2>怎么选</h2>
-<ul class="tight">
-<li>国内直连 + 永久免费模型：智谱 GLM-4.7-Flash、讯飞星火 Spark Lite。</li>
-<li>新用户额度最大：智谱送 2,000 万 Token，通义每模型 100 万 Token（90 天），豆包实名后每模型每天 200 万 Token。</li>
-<li>不绑卡：DeepSeek、硅基流动、Gemini、Groq 都不用绑卡；OpenAI、Hugging Face、Replicate 要绑卡，且 OpenAI 无免费额度。</li>
-</ul>
 </Layout>
 
 <!-- rebuild: guides/llm 404 复查触发 -->
