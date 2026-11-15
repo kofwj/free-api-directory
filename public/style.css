@@ -39,5 +39,20 @@ tbody tr:hover{background:#f8fafc}
 .badge.amber{background:var(--amber-bg);color:var(--amber)}
 .badge.grey{background:#f1f5f9;color:#475569}
 .badge.blue{background:#eff6ff;color:var(--accent)}
+.hero-dark{background:#0f172a;color:#fff;border-radius:18px;padding:36px 28px;margin:24px 0}
+.hero-dark h1{color:#fff}
+.hero-dark p{color:#cbd5e1}
+.hero-dark em{font-style:normal;background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-dark input{width:100%;max-width:560px;margin-top:18px;padding:13px 16px;border-radius:10px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:16px;outline:none}
+.hero-dark input::placeholder{color:#94a3b8}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.pills button{border:1px solid #334155;background:transparent;color:#e2e8f0;border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer}
+.pills button.on{background:#2563eb;border-color:#2563eb;color:#fff}
+.api-grid{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:900px){.api-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.api-grid{grid-template-columns:1fr}}
+.api-card h3{font-size:16px}
+.api-card p{font-size:13px;min-height:40px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
 footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--muted);font-size:13px}
 .back{font-size:14px}
