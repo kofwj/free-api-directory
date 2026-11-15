@@ -1,0 +1,479 @@
+{
+  "date": "2026-11-15",
+  "checks": [
+    {
+      "category": "llm",
+      "name": "DeepSeek 开放平台",
+      "docs": "https://platform.deepseek.com/",
+      "status": "ERR HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "category": "llm",
+      "name": "硅基流动 SiliconFlow",
+      "docs": "https://siliconflow.cn/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "Google Gemini API",
+      "docs": "https://aistudio.google.com/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "Groq",
+      "docs": "https://groq.com/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "NVIDIA NIM",
+      "docs": "https://build.nvidia.com/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "通义千问（阿里云百炼）",
+      "docs": "https://www.aliyun.com/product/bailian",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "智谱 GLM",
+      "docs": "https://open.bigmodel.cn/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "讯飞星火",
+      "docs": "https://www.xfyun.cn/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "百度文心（百度千帆）",
+      "docs": "https://qianfan.cloud.baidu.com/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "Kimi（月之暗面）",
+      "docs": "https://platform.moonshot.cn/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "火山引擎豆包",
+      "docs": "https://www.volcengine.com/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "腾讯云 TokenHub",
+      "docs": "https://cloud.tencent.com/",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "OpenAI",
+      "docs": "https://platform.openai.com/docs/pricing",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "Hugging Face",
+      "docs": "https://huggingface.co/docs/inference-providers/pricing",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "Cohere",
+      "docs": "https://cohere.com/pricing",
+      "status": 200
+    },
+    {
+      "category": "llm",
+      "name": "Replicate",
+      "docs": "https://replicate.com/pricing",
+      "status": 200
+    },
+    {
+      "category": "weather",
+      "name": "Open-Meteo",
+      "docs": "https://open-meteo.com/",
+      "status": 200
+    },
+    {
+      "category": "weather",
+      "name": "WeatherAPI.com",
+      "docs": "https://www.weatherapi.com/",
+      "status": 200
+    },
+    {
+      "category": "weather",
+      "name": "OpenWeatherMap",
+      "docs": "https://openweathermap.org/price",
+      "status": 200
+    },
+    {
+      "category": "weather",
+      "name": "和风天气 QWeather",
+      "docs": "https://www.qweather.com/",
+      "status": 200
+    },
+    {
+      "category": "weather",
+      "name": "Tomorrow.io",
+      "docs": "https://docs.tomorrow.io/reference/welcome",
+      "status": 200
+    },
+    {
+      "category": "weather",
+      "name": "Visual Crossing",
+      "docs": "https://www.visualcrossing.com/",
+      "status": 200
+    },
+    {
+      "category": "weather",
+      "name": "AccuWeather",
+      "docs": "https://developer.accuweather.com/",
+      "status": 200
+    },
+    {
+      "category": "weather",
+      "name": "IQAir",
+      "docs": "https://www.iqair.com/air-quality-monitors/api",
+      "status": "ERR HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "category": "stock",
+      "name": "AKShare",
+      "docs": "https://akshare.akfamily.xyz/",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "Tushare",
+      "docs": "https://tushare.pro/",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "东财 East Money（非官方接口）",
+      "docs": "https://quote.eastmoney.com/",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "Alpha Vantage",
+      "docs": "https://www.alphavantage.co/",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "Binance",
+      "docs": "https://data-api.binance.vision",
+      "status": "ERR HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "category": "stock",
+      "name": "Frankfurter",
+      "docs": "https://frankfurter.dev",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "Fixer",
+      "docs": "https://fixer.io/pricing",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "Twelve Data",
+      "docs": "https://twelvedata.com/docs",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "Finnhub",
+      "docs": "https://finnhub.io/pricing",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "Polygon.io / Massive",
+      "docs": "https://massive.com/pricing",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "FRED",
+      "docs": "https://fred.stlouisfed.org/docs/api/api_key.html",
+      "status": "ERR TimeoutError: The read operation timed out"
+    },
+    {
+      "category": "stock",
+      "name": "Coinbase",
+      "docs": "https://docs.cdp.coinbase.com/",
+      "status": 200
+    },
+    {
+      "category": "stock",
+      "name": "Kraken",
+      "docs": "https://docs.kraken.com/api/",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "高德地图 Web 服务",
+      "docs": "https://lbs.amap.com/",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "百度地图 Web 服务",
+      "docs": "https://lbsyun.baidu.com/",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "OpenStreetMap Nominatim",
+      "docs": "https://nominatim.openstreetmap.org/",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "Mapbox",
+      "docs": "https://www.mapbox.com/pricing",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "ipstack",
+      "docs": "https://ipstack.com/pricing/",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "Positionstack",
+      "docs": "https://positionstack.com/documentation",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "OpenCage",
+      "docs": "https://opencagedata.com/pricing",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "TomTom",
+      "docs": "https://developer.tomtom.com/pricing",
+      "status": 200
+    },
+    {
+      "category": "maps",
+      "name": "天地图",
+      "docs": "https://www.tianditu.gov.cn/",
+      "status": "ERR HTTPError: HTTP Error 418: "
+    },
+    {
+      "category": "ip-express",
+      "name": "ip-api.com",
+      "docs": "https://ip-api.com/",
+      "status": 200
+    },
+    {
+      "category": "ip-express",
+      "name": "ShowAPI 快递 / IP（免费试用档）",
+      "docs": "https://www.showapi.com/",
+      "status": 200
+    },
+    {
+      "category": "ip-express",
+      "name": "极速数据 快递查询",
+      "docs": "https://www.jisuapi.com/",
+      "status": 200
+    },
+    {
+      "category": "dev",
+      "name": "GitLab",
+      "docs": "https://docs.gitlab.com/ee/api/rest/",
+      "status": 200
+    },
+    {
+      "category": "dev",
+      "name": "Hacker News",
+      "docs": "https://github.com/HackerNews/API",
+      "status": 200
+    },
+    {
+      "category": "dev",
+      "name": "ReqRes",
+      "docs": "https://reqres.in/",
+      "status": 200
+    },
+    {
+      "category": "dev",
+      "name": "HTTPBin",
+      "docs": "https://httpbin.org/",
+      "status": 200
+    },
+    {
+      "category": "dev",
+      "name": "DummyJSON",
+      "docs": "https://dummyjson.com/docs",
+      "status": 200
+    },
+    {
+      "category": "dev",
+      "name": "RandomUser",
+      "docs": "https://randomuser.me/documentation",
+      "status": 200
+    },
+    {
+      "category": "dev",
+      "name": "USGS Earthquake",
+      "docs": "https://earthquake.usgs.gov/fdsnws/event/1/",
+      "status": 200
+    },
+    {
+      "category": "dev",
+      "name": "Transport for London",
+      "docs": "https://api-portal.tfl.gov.uk/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "TMDB",
+      "docs": "https://developer.themoviedb.org/docs",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Spotify",
+      "docs": "https://developer.spotify.com/documentation/web-api",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Unsplash",
+      "docs": "https://unsplash.com/developers",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Pexels",
+      "docs": "https://www.pexels.com/api/documentation/",
+      "status": "ERR HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "category": "media",
+      "name": "Pixabay",
+      "docs": "https://pixabay.com/api/docs/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Giphy",
+      "docs": "https://developers.giphy.com/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "NASA",
+      "docs": "https://api.nasa.gov/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Google Books",
+      "docs": "https://developers.google.com/books",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "The Guardian",
+      "docs": "https://open-platform.theguardian.com/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "NY Times",
+      "docs": "https://developer.nytimes.com/apis",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Twitter/X",
+      "docs": "https://developer.x.com/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "SendGrid",
+      "docs": "https://docs.sendgrid.com/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Foursquare",
+      "docs": "https://docs.foursquare.com/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Yelp",
+      "docs": "https://docs.developer.yelp.com/",
+      "status": 200
+    },
+    {
+      "category": "media",
+      "name": "Indeed",
+      "docs": "https://docs.indeed.com/",
+      "status": "ERR HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "category": "china",
+      "name": "聚合数据",
+      "docs": "https://www.juhe.cn/docs/4",
+      "status": 200
+    },
+    {
+      "category": "china",
+      "name": "APISpace",
+      "docs": "https://www.apispace.com/",
+      "status": 200
+    },
+    {
+      "category": "china",
+      "name": "万维易源 ShowAPI",
+      "docs": "https://www.showapi.com/free-api",
+      "status": 200
+    },
+    {
+      "category": "china",
+      "name": "天行数据",
+      "docs": "https://www.tianapi.com/",
+      "status": 200
+    },
+    {
+      "category": "china",
+      "name": "幂简集成",
+      "docs": "https://www.mijian.io/",
+      "status": "ERR URLError: <urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "category": "china",
+      "name": "百度 AI 搜索",
+      "docs": "https://ai-bio.cn/baidu-ai-search/",
+      "status": 200
+    },
+    {
+      "category": "china",
+      "name": "阿里云 API 市场",
+      "docs": "https://market.aliyun.com/",
+      "status": 200
+    }
+  ]
+}
