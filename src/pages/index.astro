@@ -21,8 +21,8 @@ const total = data.categories.reduce((n, c) => n + c.items.length, 0);
 ))}
 </div>
 <h2>横评文章</h2>
-<ul class="tight">
-<li><a href="/guides/weather/">免费天气 API 对比：额度谁最大</a></li>
-<li><a href="/guides/llm/">免费大模型 API 国内直连横评</a></li>
-</ul>
+<div class="grid">
+<a class="card" href="/guides/weather/"><h3>免费天气 API 对比：额度谁最大</h3><p>Open-Meteo 免 Key 10,000 次/天，OpenWeatherMap 经典档 1,000,000 次/月，谁更适合你。</p><div class="go">读横评 →</div></a>
+<a class="card" href="/guides/llm/"><h3>免费大模型 API 国内直连横评</h3><p>DeepSeek、智谱、豆包、通义国内能用；Gemini、Groq、OpenAI 需境外网络。</p><div class="go">读横评 →</div></a>
+</div>
 </Layout>
