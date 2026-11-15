@@ -2,20 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 import data from '../data/apis.json';
 const total = data.categories.reduce((n, c) => n + c.items.length, 0);
+const all = data.categories.flatMap(c => c.items.map(i => ({ ...i, cat: c.title, slugCat: c.slug })));
 ---
 <Layout title="免费 API 目录 — 额度、绑卡、国内直连一次讲清" description="免费大模型、天气、股票、地图、IP 快递 API 对比：免费额度、要不要 Key、绑卡、国内直连、能不能商用。">
-<section class="hero">
+<section class="hero hero-dark">
 <h1>免费 API，<em>先看额度再动手</em></h1>
-<p>8 类，{total} 个 API。</p>
+<p>8 类，{total} 个 API。搜名字或额度，比如“天气”“10,000 次/天”。</p>
+<input id="q" type="search" placeholder="搜 API 名字、额度…" autocomplete="off" />
+<div class="pills" id="pills">
+<button data-f="all" class="on">全部</button>
+{data.categories.map(c => (<button data-f={c.slug}>{c.title.replace(' API', '').replace('免费', '')}</button>))}
+<button data-f="free">免 Key</button>
+<button data-f="china">国内直连</button>
+</div>
 </section>
+<div class="grid api-grid" id="grid">
+{all.map(i => (
+<a class="card api-card" href={`/api/${i.slug}/`} data-cat={i.slugCat} data-free={i.key} data-china={i.china_direct} data-text={`${i.name} ${i.quota} ${i.cat}`}>
+<span class="tag">{i.cat}</span>
+<h3>{i.name}</h3>
+<p>{i.quota}</p>
+<div class="badges">
+{i.key.includes('免') && <span class="badge green">免 Key</span>}
+{i.china_direct.startsWith('是') && <span class="badge blue">国内直连</span>}
+{i.card.includes('不用绑卡') && <span class="badge grey">不用绑卡</span>}
+</div>
+</a>
+))}
+</div>
+<p class="section-note" id="count"></p>
+<h2>按分类看</h2>
 <div class="grid">
 {data.categories.map(c => (
   <a class="card" href={`/${c.slug}/`}>
     <span class="tag">{c.items.length} 个 API</span>
     <h3>{c.title}</h3>
-    <ul style="margin:10px 0 0;padding-left:18px;color:#475569;font-size:14px;line-height:1.9">
-    {c.items.slice(0,3).map(i => (<li>{i.name} — {i.quota}</li>))}
-    </ul>
     <div class="go">看完整对比 →</div>
   </a>
 ))}
@@ -25,4 +46,22 @@ const total = data.categories.reduce((n, c) => n + c.items.length, 0);
 <a class="card" href="/guides/weather/"><h3>免费天气 API 对比：额度谁最大</h3><p>Open-Meteo 免 Key 10,000 次/天，OpenWeatherMap 经典档 1,000,000 次/月，谁更适合你。</p><div class="go">读横评 →</div></a>
 <a class="card" href="/guides/llm/"><h3>免费大模型 API 国内直连横评</h3><p>DeepSeek、智谱、豆包、通义国内能用；Gemini、Groq、OpenAI 需境外网络。</p><div class="go">读横评 →</div></a>
 </div>
+<script>
+const q = document.getElementById('q'), pills = document.getElementById('pills'), grid = document.getElementById('grid'), count = document.getElementById('count');
+let f = 'all';
+function apply() {
+  const t = (q.value || '').trim().toLowerCase(); let n = 0;
+  grid.querySelectorAll('.api-card').forEach(c => {
+    const okCat = f === 'all' || c.dataset.cat === f;
+    const okFree = f !== 'free' || c.dataset.free.includes('免');
+    const okChina = f !== 'china' || c.dataset.china.startsWith('是');
+    const okText = !t || c.dataset.text.toLowerCase().includes(t);
+    const show = okCat && okFree && okChina && okText;
+    c.style.display = show ? '' : 'none'; if (show) n++;
+  });
+  count.textContent = n + ' 个 API';
+}
+pills.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; pills.querySelectorAll('button').forEach(x => x.classList.remove('on')); b.classList.add('on'); f = b.dataset.f; apply(); });
+q.addEventListener('input', apply); apply();
+</script>
 </Layout>
