@@ -29,7 +29,7 @@ python3 scripts/health_check.py   # 生成 public/health.json
 
 ## 部署
 
-已上线：Cloudflare Pages 项目 `free-api-directory`，连这个仓库自动部署，生产域名 `freeapi.anemy.org`（生产环境，2026-11-14 绑好）。Build command: `npm run build`，Output directory: `dist`。
+已上线 https://freeapi.anemy.org/，Cloudflare Pages 自动部署。
 
 ## 收录
 
