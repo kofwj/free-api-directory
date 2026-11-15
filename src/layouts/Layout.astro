@@ -15,5 +15,9 @@ const { title, description } = Astro.props;
 <body>
 <header class="topbar"><div class="topbar-inner"><a class="logo" href="/">免费 API <b>目录</b></a><span>额度 / 绑卡 / 国内直连 / 商用</span></div></header>
 <div class="wrap"><slot /></div>
+<footer class="wrap" style="border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:14px">
+<a href="/">首页</a> · <a href="/guides/">横评</a> · <a href="/llm/">大模型</a> · <a href="/weather/">天气</a> · <a href="/stock/">股票/金融</a> · <a href="/maps/">地图</a> · <a href="/dev/">开发</a> · <a href="/media/">媒体</a> · <a href="/china/">国内聚合</a> · <a href="/ip-express/">IP/快递</a><br />
+<a href="https://github.com/kofwj/free-api-directory">GitHub</a> · <a href="/sitemap-index.xml">Sitemap</a>
+</footer>
 </body>
 </html>
