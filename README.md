@@ -39,7 +39,3 @@ python3 scripts/health_check.py   # 生成 public/health.json
 ## 每日健康检查
 
 `.github/workflows/health-check.yml` 每天 09:00 北京时间跑 `scripts/health_check.py`，只查官方文档页是否 200，写回 `public/health.json`。2026-11-15 首次手动触发已跑通（1 分 20 秒）。真实 API 调用 / 延迟另外跑，不在这里烧额度。
-
-## 止损线
-
-上线 90 天，自然搜索点击 <1,000/月，就停 / 只做最小维护。
