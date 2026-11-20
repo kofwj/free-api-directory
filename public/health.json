@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "checks": [
     {
       "category": "llm",
@@ -227,7 +227,7 @@
       "category": "maps",
       "name": "高德地图 Web 服务",
       "docs": "https://lbs.amap.com/",
-      "status": 200
+      "status": "ERR URLError: <urlopen error _ssl.c:994: The handshake operation timed out>"
     },
     {
       "category": "maps",
