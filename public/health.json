@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "checks": [
     {
       "category": "llm",
@@ -191,7 +191,7 @@
       "category": "stock",
       "name": "Twelve Data",
       "docs": "https://twelvedata.com/docs",
-      "status": 200
+      "status": "ERR TimeoutError: The read operation timed out"
     },
     {
       "category": "stock",
@@ -227,7 +227,7 @@
       "category": "maps",
       "name": "高德地图 Web 服务",
       "docs": "https://lbs.amap.com/",
-      "status": "ERR URLError: <urlopen error _ssl.c:994: The handshake operation timed out>"
+      "status": 200
     },
     {
       "category": "maps",
