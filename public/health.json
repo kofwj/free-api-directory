@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "checks": [
     {
       "category": "llm",
@@ -209,7 +209,7 @@
       "category": "stock",
       "name": "FRED",
       "docs": "https://fred.stlouisfed.org/docs/api/api_key.html",
-      "status": "ERR TimeoutError: The read operation timed out"
+      "status": 200
     },
     {
       "category": "stock",
@@ -221,7 +221,7 @@
       "category": "stock",
       "name": "Kraken",
       "docs": "https://docs.kraken.com/api/",
-      "status": 200
+      "status": "ERR TimeoutError: The read operation timed out"
     },
     {
       "category": "maps",
